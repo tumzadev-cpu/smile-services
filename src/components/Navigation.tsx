@@ -11,8 +11,6 @@ interface NavigationProps {
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const bookingUrl = 'https://wa.me/message/PKYOFMM62K6GB1';
-
   const navItems = [
     { label: 'Home', page: 'home' as Page },
     { label: 'Services', page: 'services' as Page },
@@ -49,14 +47,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item.label}
               </button>
             ))}
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition-colors"
-            >
-              Book a Call
-            </a>
           </div>
 
           <button
@@ -84,14 +74,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {item.label}
               </button>
             ))}
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition-colors text-center"
-            >
-              Book a Call
-            </a>
           </div>
         </div>
       )}

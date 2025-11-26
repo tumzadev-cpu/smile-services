@@ -1,7 +1,7 @@
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { Chatbot } from '../components/Chatbot';
-import { Heart, MessageCircle, Phone, Smile, Gift, CheckCircle } from 'lucide-react';
+import { Heart, MessageCircle, Phone, Smile, Gift, CheckCircle, Calendar } from 'lucide-react';
 
 type Page = 'home' | 'services' | 'contact';
 
@@ -14,71 +14,98 @@ export function Services({ onNavigate }: ServicesProps) {
 
   const servicesList = [
     {
-      icon: Heart,
-      title: 'Celebratory Calls',
+      icon: Phone,
+      title: 'Surprise Call Services',
+      subtitle: 'We can help you say what your heart feels, even when you can\'t be there in person',
       description:
-        "A personalized call to your loved ones, delivered on your behalf to celebrate their special moments—whether it's a birthday, anniversary, new baby, graduation, induction, wedding, or any milestone worth honoring.",
-      occasions: [
-        'Birthdays',
-        'Anniversaries',
-        'Graduations',
-        'Weddings',
-        'New Baby',
-        'Promotions',
+        'We deliver your message with warmth, emotion, and accuracy. Whether it\'s love, apology, encouragement, or birthdays — we speak from your heart.',
+      callTypes: [
+        {
+          name: 'Celebratory Calls',
+          detail: 'A personalized call to your loved ones, delivered on your behalf to celebrate their special moments—whether it\'s a birthday, anniversary, new baby, graduation, induction, wedding, or any milestone worth honoring.',
+        },
+        {
+          name: 'Appreciation Calls',
+          detail: 'A personalized, heartfelt call to your loved one, gently expressing remorse for a misstep and paving the way for genuine reconciliation.',
+        },
+        {
+          name: 'Reach Out/ Encouragement Calls',
+          detail: 'A heartfelt call to uplift your loved one, offering encouragement and gentle motivation to keep going—whether they\'re facing illness, feeling lost, or navigating a challenging season.',
+        },
+        {
+          name: 'Self Love Calls',
+          detail: 'A call you can book just for yourself. Going through a tough time or simply need a lift? We\'ll reach out with a warm, uplifting conversation to leave you feeling reassured, valued, and genuinely happy again.',
+        },
       ],
       image: '/2.JPG',
     },
     {
-      icon: MessageCircle,
-      title: 'Appreciation Calls',
-      description:
-        'A personalized, heartfelt call to your loved one, gently expressing remorse for a misstep and paving the way for genuine reconciliation.',
-      occasions: [
-        'Apologies',
-        'Thank You Messages',
-        'Reconciliation',
-        'Gratitude Expressions',
-      ],
-      image: '/smile.JPG',
-    },
-    {
-      icon: Phone,
-      title: 'Encouragement / Reach-Out Calls',
-      description:
-        "A heartfelt call to uplift your loved one, offering encouragement and gentle motivation to keep going—whether they're facing illness, feeling lost, or navigating a challenging season.",
-      occasions: [
-        'Health Challenges',
-        'Difficult Times',
-        'Career Changes',
-        'Personal Struggles',
-      ],
-      image: '/4.JPG',
-    },
-    {
-      icon: Smile,
-      title: 'Self Love Calls',
-      description:
-        "A call you can book just for yourself. Going through a tough time or simply need a lift? We'll reach out with a warm, uplifting conversation to leave you feeling reassured, valued, and genuinely happy again.",
-      occasions: [
-        'Personal Growth',
-        'Mental Health Support',
-        'Motivation Boost',
-        'Self-Care Moments',
-      ],
-      image: '/5.JPG',
-    },
-    {
       icon: Gift,
-      title: 'Surprise/Gift Packages',
+      title: 'Gift Packages',
+      subtitle: 'Thoughtful, beautifully arranged gifts for every occasion',
       description:
-        'Delight your loved ones with more than just a call—pair it with a thoughtfully curated gift or full surprise event, delivered right to their door. From gift boxes and anniversary flower arrangements to custom celebration kits for graduations, new babies, or "just because" moments, we handle every detail.',
-      occasions: [
-        'Gift Boxes',
-        'Flower Arrangements',
-        'Celebration Kits',
-        'Custom Surprises',
+        'Send beautifully curated gifts anywhere within your city. Perfect for birthdays, anniversaries, surprises, and "just because."',
+      callTypes: [
+        {
+          name: 'Birthday gift boxes',
+          detail: '',
+        },
+        {
+          name: 'Anniversary packages',
+          detail: '',
+        },
+        {
+          name: 'Chocolate & flower bundles',
+          detail: '',
+        },
+        {
+          name: '"Just because" surprise gifts',
+          detail: '',
+        },
+        {
+          name: 'Mini celebration packs',
+          detail: '',
+        },
+        {
+          name: 'Corporate gift bundles',
+          detail: '',
+        },
       ],
       image: '/6.JPG',
+    },
+    {
+      icon: Calendar,
+      title: 'Event Planning',
+      subtitle: 'We create simple, beautiful setups for intimate celebrations',
+      description:
+        'Let\'s help you plan small to medium events with elegance and ease.',
+      callTypes: [
+        {
+          name: 'Surprise setups',
+          detail: '',
+        },
+        {
+          name: 'Proposals',
+          detail: '',
+        },
+        {
+          name: 'Home & room décor',
+          detail: '',
+        },
+        {
+          name: 'Mini birthdays',
+          detail: '',
+        },
+        {
+          name: 'Anniversaries',
+          detail: '',
+        },
+        {
+          name: 'Small outdoor events',
+          detail: '',
+        },
+      ],
+      image: '/4.JPG',
     },
   ];
 
@@ -122,9 +149,9 @@ export function Services({ onNavigate }: ServicesProps) {
           <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-black rounded-full text-sm font-semibold mb-6 border border-white/30">OUR SERVICES</span>
           <h1 className="text-6xl sm:text-7xl font-extrabold text-black mb-6 leading-tight">Our Services</h1>
           <p className="text-xl text-black/80 max-w-3xl mx-auto font-medium">
-            From celebratory moments to heartfelt apologies, we offer a range of personalized call
-            services designed to bring people closer together.
+            We offer three core services designed to help you create joy, connection, and unforgettable moments.
           </p>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto mt-4">Choose what you need — we'll handle the rest.</p>
         </div>
       </section>
 
@@ -144,17 +171,34 @@ export function Services({ onNavigate }: ServicesProps) {
                   <div className="bg-gradient-to-br from-yellow-400 to-orange-400 w-24 h-24 rounded-2xl flex items-center justify-center mb-6 shadow-xl">
                     <Icon className="w-12 h-12 text-black" />
                   </div>
-                  <h2 className="text-4xl sm:text-5xl font-extrabold text-black mb-6">{service.title}</h2>
-                  <p className="text-gray-700 text-xl leading-relaxed mb-8">
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-black mb-4">{service.title}</h2>
+                  <p className="text-lg font-semibold text-gray-700 mb-6">{service.subtitle}</p>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-8">
                     {service.description}
                   </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    {service.occasions.map((occasion, i) => (
-                      <div key={i} className="flex items-center gap-2">
-                        <CheckCircle className="w-6 h-6 text-yellow-500" />
-                        <span className="text-gray-700 font-medium">{occasion}</span>
+                  <div className="space-y-4">
+                    {service.callTypes.map((type, i) => (
+                      <div key={i}>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                          <div>
+                            <p className="text-gray-900 font-bold">{type.name}</p>
+                            {type.detail && <p className="text-gray-600 text-sm mt-1">{type.detail}</p>}
+                          </div>
+                        </div>
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-8">
+                    <a
+                      href={bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-8 py-4 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all"
+                    >
+                      {index === 0 ? 'Book a Surprise Call' : index === 1 ? 'Order a Gift Package' : 'Plan an Event'}
+                      <Icon className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
                 <div className="flex-1">
@@ -169,39 +213,26 @@ export function Services({ onNavigate }: ServicesProps) {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-400 rounded-full filter blur-3xl"></div>
-        </div>
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <span className="inline-block px-4 py-2 bg-yellow-400/20 text-yellow-400 rounded-full text-sm font-semibold mb-4">SIMPLE PROCESS</span>
-            <h2 className="text-5xl sm:text-6xl font-extrabold mb-4">How It Works</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">Four easy steps to spread love and happiness</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {howItWorksSteps.map((step, index) => (
-              <div key={index} className="text-center group">
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-400 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl font-bold text-black shadow-xl group-hover:scale-110 transition-transform duration-300">
-                  {step.number}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">{step.title}</h3>
-                <p className="text-gray-400 text-lg">{step.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-16">
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-yellow-400 text-black px-12 py-5 rounded-full text-xl font-bold hover:bg-yellow-500 transform hover:scale-105 transition-all shadow-2xl"
-            >
-              Get Started Now
-              <Phone className="w-6 h-6" />
-            </a>
-          </div>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl sm:text-6xl font-extrabold text-black mb-6">
+            Need something special?
+          </h2>
+          <p className="text-2xl text-gray-700 mb-8">
+            We can customize any surprise, call, or gift.
+          </p>
+          <p className="text-xl text-gray-600 mb-10">
+            Just tell us what you imagine — we'll make it happen.
+          </p>
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-12 py-5 rounded-full text-xl font-bold hover:shadow-lg hover:scale-105 transition-all"
+          >
+            Chat With Us on WhatsApp
+            <MessageCircle className="w-6 h-6" />
+          </a>
         </div>
       </section>
 

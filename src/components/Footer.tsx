@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Phone } from 'lucide-react';
+import { Facebook, Instagram, Phone, Mail } from 'lucide-react';
 
 type Page = 'home' | 'services' | 'contact';
 
@@ -58,7 +58,21 @@ export function Footer({ onNavigate }: FooterProps) {
                 className="flex items-center gap-2 text-gray-400 hover:text-yellow-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                234 9015544758
+                +234 9015544758
+              </a>
+              <a
+                href="tel:2348145147626"
+                className="flex items-center gap-2 text-gray-400 hover:text-yellow-400 transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                +234 8145147626
+              </a>
+              <a
+                href="mailto:smileserviceshq@gmail.com"
+                className="flex items-center gap-2 text-gray-400 hover:text-yellow-400 transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                smileserviceshq@gmail.com
               </a>
               <div className="flex gap-4 mt-4">
                 <a
@@ -83,7 +97,8 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Smile Services. All rights reserved.</p>
+          <p>&copy; 2025 Smile Services. All rights reserved.</p>
+          <p className="mt-2 text-sm">We Spread Love and Happiness...</p>
         </div>
       </div>
     </footer>
